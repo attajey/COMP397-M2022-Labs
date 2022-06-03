@@ -1865,7 +1865,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1548988453}
   - component: {fileID: 1548988452}
-  - component: {fileID: 1548988451}
   - component: {fileID: 1548988454}
   m_Layer: 0
   m_Name: MiniMap Camera
@@ -1874,14 +1873,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1548988451
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548988450}
-  m_Enabled: 1
 --- !u!20 &1548988452
 Camera:
   m_ObjectHideFlags: 0
@@ -2116,11 +2107,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot
       objectReference: {fileID: 0}
-    - target: {fileID: 6701440302290163388, guid: 973b604b6b8e2d446b7fd237cc0c79f1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6701440302290163390, guid: 973b604b6b8e2d446b7fd237cc0c79f1,
         type: 3}
       propertyPath: m_RootOrder
@@ -2282,6 +2268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Robot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701440302290163388, guid: 973b604b6b8e2d446b7fd237cc0c79f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701440302290163390, guid: 973b604b6b8e2d446b7fd237cc0c79f1,
         type: 3}
