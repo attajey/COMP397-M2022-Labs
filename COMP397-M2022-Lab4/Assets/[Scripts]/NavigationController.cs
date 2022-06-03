@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class NavigationController : MonoBehaviour
 {
+    public GameObject startTile;
     public List<GameObject> tiles;
     public List<GameObject> robots;
     // Start is called before the first frame update
     void Start()
     {
+        startTile.GetComponent<NavMeshSurface>().BuildNavMesh();
         foreach (var tile in tiles)
         {
             tile.GetComponent<NavMeshSurface>().BuildNavMesh();
