@@ -8,6 +8,7 @@ public class NavigationController : MonoBehaviour
     public GameObject startTile;
     public List<GameObject> tiles;
     public List<GameObject> robots;
+
     // Start is called before the first frame update
     void Start()
     {
