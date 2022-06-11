@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
@@ -13,6 +14,7 @@ public class MapGenerator : MonoBehaviour
     public List<GameObject> tilesPrefab;
     public Transform tilesParent;
     public List<GameObject> randomTiles;
+    public GameObject startTile;
 
     private int startingWidth;
     private int startingDepth;
@@ -24,7 +26,18 @@ public class MapGenerator : MonoBehaviour
         startingWidth = width;
         startingDepth = depth;
         BuildMap();
+
+        BuildNavigationMesh();
+
+        //foreach (var robot in robots)
+        //{
+        //    robot.SetActive(true);
+        //}
+
+
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -35,6 +48,7 @@ public class MapGenerator : MonoBehaviour
             startingDepth = depth;
             ResetMap();
             BuildMap();
+            BuildNavigationMesh();
         }
     }
 
@@ -57,6 +71,17 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
+
+    private void BuildNavigationMesh()
+    {
+        startTile.GetComponent<NavMeshSurface>().BuildNavMesh();
+
+        foreach (var tile in randomTiles)
+        {
+            tile.GetComponent<NavMeshSurface>().BuildNavMesh();
+        }
+    }
+
 
     private void ResetMap()
     {
