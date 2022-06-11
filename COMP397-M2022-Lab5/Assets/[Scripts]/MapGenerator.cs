@@ -12,19 +12,30 @@ public class MapGenerator : MonoBehaviour
 
     public List<GameObject> tilesPrefab;
     public Transform tilesParent;
+    public List<GameObject> randomTiles;
 
+    private int startingWidth;
+    private int startingDepth;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        startingWidth = width;
+        startingDepth = depth;
         BuildMap();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (width != startingWidth || depth != startingDepth)
+        {
+            startingWidth = width;
+            startingDepth = depth;
+            ResetMap();
+            BuildMap();
+        }
     }
 
     private void BuildMap()
@@ -42,7 +53,20 @@ public class MapGenerator : MonoBehaviour
                 Quaternion tileRotation = Quaternion.Euler(0.0f, Random.Range(0, 4) * 90.0f, 0.0f);
                 var randomTile = Instantiate(randomTilePrefab, tilePosition, tileRotation);
                 randomTile.transform.SetParent(tilesParent);
+                randomTiles.Add(randomTile);
             }
         }
+    }
+
+    private void ResetMap()
+    {
+        var size = randomTiles.Count;
+        for (int index = 0; index < size; index++)
+        {
+            var tileToDestroy = randomTiles[index];
+            tileToDestroy.transform.SetParent(null);
+            Destroy(tileToDestroy);
+        }
+        randomTiles.Clear();
     }
 }

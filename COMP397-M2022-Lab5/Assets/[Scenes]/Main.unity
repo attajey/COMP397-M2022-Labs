@@ -2442,12 +2442,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf85607791375f4cb7c49ec0fcad67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 2
-  depth: 2
+  width: 10
+  depth: 10
   tilesPrefab:
   - {fileID: 9040486184255953877, guid: 5e90b7855e17c904c9c6c5f4501ac6a4, type: 3}
   - {fileID: 2868821033270290692, guid: bd7360b91c2b15348837e294d718be27, type: 3}
   - {fileID: 932476354862592062, guid: accded165da7dde46a650ae6c46e1916, type: 3}
+  tilesParent: {fileID: 1478772464}
+  randomTiles: []
 --- !u!4 &1657740619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6284728100487225561, guid: fa183040142e4ff4bac834ba59367807,
