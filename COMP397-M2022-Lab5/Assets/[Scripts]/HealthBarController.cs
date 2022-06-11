@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class HealthBarController : MonoBehaviour
 {
     public Slider bar;
@@ -26,7 +27,23 @@ public class HealthBarController : MonoBehaviour
             bar.value = healthValue;
             OnValueChanged();
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(10);
+        }
     }
+
+    public void TakeDamage(int damage)
+    {
+        //_ = healthValue < 0 ? healthValue = 0 : healthValue -= damage;
+        healthValue -= damage;
+        if (healthValue < 0)
+        {
+            healthValue = 0;
+        }
+    }
+
 
     public void OnValueChanged()
     {
