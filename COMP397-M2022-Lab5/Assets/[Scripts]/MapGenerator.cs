@@ -48,7 +48,8 @@ public class MapGenerator : MonoBehaviour
             startingDepth = depth;
             ResetMap();
             BuildMap();
-            BuildNavigationMesh();
+            Invoke(nameof(BuildNavigationMesh), 0.2f);
+            //BuildNavigationMesh();
         }
     }
 
@@ -85,6 +86,9 @@ public class MapGenerator : MonoBehaviour
 
     private void ResetMap()
     {
+        startingWidth = width;
+        startingDepth = depth;
+
         var size = randomTiles.Count;
         for (int index = 0; index < size; index++)
         {
