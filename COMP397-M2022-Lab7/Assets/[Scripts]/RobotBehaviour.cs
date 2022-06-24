@@ -33,19 +33,16 @@ public class RobotBehaviour : MonoBehaviour
         {
             GetComponent<CapsuleCollider>().enabled = false;
             GetComponent<Rigidbody>().useGravity = false;
-            isGrounded = true;
 
+            isGrounded = true;
         }
     }
 
-    /*private void OnColissionExit(Collision other)
+    private void OnColissionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
-
         }
     }
-    */
-
 }
