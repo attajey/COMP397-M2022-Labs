@@ -13,8 +13,12 @@ public class MapGenerator : MonoBehaviour
 
     public List<GameObject> tilesPrefab;
     public Transform tilesParent;
+    public Transform robotParent;
+    public Transform hazardParent;
+    public Transform coinParent;
     public List<GameObject> randomTiles;
     public GameObject startTile;
+    public GameObject goalTile;
 
     private int startingWidth;
     private int startingDepth;
@@ -55,15 +59,32 @@ public class MapGenerator : MonoBehaviour
 
     private void BuildMap()
     {
+        // randomly choose the goal tile location
+        var randomGoalCol = Random.Range(0, width);
+        GameObject randomTilePrefab = null;
+
+
         for (var row = 0; row < depth; row++)
         {
             for (var col = 0; col < width; col++)
             {
-                if (row ==0 && col ==0)
+                if (row == 0 && col == 0)
                 {
                     continue;
                 }
-                var randomTilePrefab = tilesPrefab[Random.Range(0, tilesPrefab.Count)];
+
+                if (row == depth - 1 && col == randomGoalCol)
+                {
+                    // put goal tile in the last row 
+                    randomTilePrefab = goalTile; ;
+
+                }
+                else
+                {
+                    randomTilePrefab = tilesPrefab[Random.Range(0, tilesPrefab.Count)];
+
+                }
+
                 Vector3 tilePosition = new Vector3(col * 16.0f, 0.0f, row * 16.0f);
                 Quaternion tileRotation = Quaternion.Euler(0.0f, Random.Range(0, 4) * 90.0f, 0.0f);
                 var randomTile = Instantiate(randomTilePrefab, tilePosition, tileRotation);
@@ -97,5 +118,23 @@ public class MapGenerator : MonoBehaviour
             Destroy(tileToDestroy);
         }
         randomTiles.Clear();
+
+        // remove robots
+        foreach (Transform child in robotParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // remove hazards
+        foreach (Transform child in hazardParent)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // remove coins
+        foreach (Transform child in coinParent)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }
