@@ -35,7 +35,7 @@ public class TileGenerator : MonoBehaviour
         if (randomRoll > 0 && randomRoll < 4)
         {
             // spawn a robot
-            randomObject = Instantiate(robotPrefab, spawnPoint.position + new Vector3(0.0f, 0.2f, 0.0f), Quaternion.identity);
+            randomObject = Instantiate(robotPrefab, spawnPoint.position + new Vector3(0.0f, 0.3f, 0.0f), Quaternion.identity);
             randomObject.transform.SetParent(robotParent);
         }
         else if (randomRoll > 3 && randomRoll < 7)

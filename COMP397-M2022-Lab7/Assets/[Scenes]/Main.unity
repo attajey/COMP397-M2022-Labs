@@ -278,16 +278,16 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1982352849}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_AdditionalShaderChannelsFlag: -1
+  m_SortingLayerID: -1179350563
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &327880130
 RectTransform:
@@ -1340,9 +1340,8 @@ MonoBehaviour:
   width: 5
   depth: 5
   tilesPrefab:
-  - {fileID: 9040486184255953877, guid: 5e90b7855e17c904c9c6c5f4501ac6a4, type: 3}
   - {fileID: 2868821033270290692, guid: bd7360b91c2b15348837e294d718be27, type: 3}
-  - {fileID: 932476354862592062, guid: accded165da7dde46a650ae6c46e1916, type: 3}
+  - {fileID: 9040486184255953877, guid: 5e90b7855e17c904c9c6c5f4501ac6a4, type: 3}
   tilesParent: {fileID: 1478772464}
   robotParent: {fileID: 230910963}
   hazardParent: {fileID: 897788289}
@@ -1422,6 +1421,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!20 &1982352849 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6034611495353731610, guid: e30bd32d8ea61c94292a32b6e42ff25e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5175768224832049501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2041544908 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7534937244238258808, guid: 6f9c878a745f67143a69f350ba6d9aa3,

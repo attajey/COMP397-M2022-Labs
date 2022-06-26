@@ -38,11 +38,11 @@ public class RobotBehaviour : MonoBehaviour
         }
     }
 
-    private void OnColissionExit(Collision other)
+    /*private void OnColissionExit(Collision other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
         }
-    }
+    }*/
 }
