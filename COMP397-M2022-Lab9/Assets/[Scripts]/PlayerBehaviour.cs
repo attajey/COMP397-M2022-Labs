@@ -28,6 +28,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
+        //GameSaveManager.Instance().SaveGame(transform);
+
     }
 
     // Update is called once per frame
@@ -55,7 +57,21 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
         velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime); 
+        controller.Move(velocity * Time.deltaTime);
+
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            //controller.enabled = false;
+            GameSaveManager.Instance().LoadGame(transform);
+            //controller.enabled = true;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            //controller.enabled = false;
+            GameSaveManager.Instance().SaveGame(transform);
+            //controller.enabled = true;
+        }
     }
     private void OnDrawGizmos()
     {

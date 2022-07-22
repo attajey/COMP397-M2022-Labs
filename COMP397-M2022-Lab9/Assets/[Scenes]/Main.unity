@@ -1903,8 +1903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf85607791375f4cb7c49ec0fcad67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 5
-  depth: 5
+  width: 2
+  depth: 2
   tilesPrefab:
   - {fileID: 2868821033270290692, guid: bd7360b91c2b15348837e294d718be27, type: 3}
   - {fileID: 9040486184255953877, guid: 5e90b7855e17c904c9c6c5f4501ac6a4, type: 3}
