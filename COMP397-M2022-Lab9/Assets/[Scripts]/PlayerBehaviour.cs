@@ -87,4 +87,16 @@ public class PlayerBehaviour : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
         }
     }
+
+    public void OnSaveButton_Pressed()
+    {
+        GameSaveManager.Instance().SaveGame(transform);
+
+    }
+
+    public void OnLoadButton_Pressed()
+    {
+        GameSaveManager.Instance().LoadGame(transform);
+
+    }
 }
