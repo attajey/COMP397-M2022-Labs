@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class NetworkPlayerBehaviour : NetworkBehaviour
 {
+    public float speed;
     private NetworkVariable<float> verticalPosition = new NetworkVariable<float>();
     private NetworkVariable<float> horizontalPosition = new NetworkVariable<float>();
 
@@ -47,8 +48,8 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
 
     public void ClientUpdate()
     {
-        var horizontal = Input.GetAxis("Horizontal") * Time.deltaTime;
-        var vertical = Input.GetAxis("Vetical") * Time.deltaTime;
+        var horizontal = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+        var vertical = Input.GetAxis("Vertical") * Time.deltaTime * speed;
 
         // Network Update - I need a network var for this 
         if (localHorizontal != horizontal || localVertical != vertical)
