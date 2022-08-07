@@ -6,6 +6,8 @@ using UnityEngine;
 public class NetworkPlayerBehaviour : NetworkBehaviour
 {
     public float speed;
+    public MeshRenderer meshRenderer;
+
     private NetworkVariable<float> verticalPosition = new NetworkVariable<float>();
     private NetworkVariable<float> horizontalPosition = new NetworkVariable<float>();
 
@@ -16,6 +18,7 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
 
     void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
         RandomSpawnPosition();
     }
 
@@ -41,6 +44,12 @@ public class NetworkPlayerBehaviour : NetworkBehaviour
 
     public void RandomSpawnPosition()
     {
+        var r = Random.Range(0.0f, 1.0f);
+        var g = Random.Range(0.0f, 1.0f);
+        var b = Random.Range(0.0f, 1.0f);
+        var color = new Color(r, g, b);
+        meshRenderer.material.SetColor("_Color", color);
+
         var x = Random.Range(-10.0f, 10.0f);
         var z = Random.Range(-10.0f, 10.0f);
         transform.position = new Vector3(x, 1.0f, z);

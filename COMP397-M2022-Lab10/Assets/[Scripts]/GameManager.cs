@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(10, 10, 300, 300));
 
-        if (NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
+        if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
         {
             // Start Button
             StartButtons();
