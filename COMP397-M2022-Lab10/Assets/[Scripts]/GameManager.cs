@@ -50,5 +50,5 @@ public class GameManager : MonoBehaviour
         GUILayout.Label("Mode: " + mode);
 
     }
- 
+
 }
